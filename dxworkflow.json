@@ -54,7 +54,7 @@
         },
         {
             "id": "stage-cnvkit_batch",
-            "executable": "app-eggd_cgp-cnvkit-batch/2.0.0",
+            "executable": "app-eggd_cgp-cnvkit-batch/2.0.1",
             "folder": "cnvkit_batch",
             "input": {
                 "purity": {
@@ -124,7 +124,7 @@
             "id": "stage-purple_plotter",
             "executable": "app-eggd_purple_plotter/1.0.0",
             "folder": "purple_plotter",
-            "inputs": {
+            "input": {
                 "purple_tar": {
                     "$dnanexus_link": {
                         "stage": "stage-purple",
