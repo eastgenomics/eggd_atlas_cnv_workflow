@@ -54,7 +54,7 @@
         },
         {
             "id": "stage-cnvkit_batch",
-            "executable": "app-eggd_cgp-cnvkit-batch/2.0.1",
+            "executable": "app-eggd_cgp-cnvkit-batch/2.0.2",
             "folder": "cnvkit_batch",
             "input": {
                 "purity": {
