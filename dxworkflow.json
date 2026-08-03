@@ -1,0 +1,155 @@
+{
+    "name": "eggd_atlas_cnv_workflow_1.0.0",
+    "title": "eggd_atlas_cnv_workflow_1.0.0",
+    "summary": "Somatic CNV workflow for Atlas pipeline",
+    "whatsNew": {
+        "1.0.0": "Initial release"
+    },
+    "stages": [
+        {
+            "id": "stage-amber",
+            "executable": "app-eggd_cgp-amber/1.0.0",
+            "folder": "amber"
+        },
+        {
+            "id": "stage-cobalt",
+            "executable": "app-eggd_cgp-cobalt/1.0.0",
+            "folder": "cobalt"
+        },
+        {
+            "id": "stage-sage",
+            "executable": "app-eggd_cgp-sage/1.0.1",
+            "folder": "sage"
+        },
+        {
+            "id": "stage-purple",
+            "executable": "app-eggd_cgp-purple/1.0.0",
+            "folder": "purple",
+            "input": {
+                "amber_tar": {
+                    "$dnanexus_link": {
+                        "outputField": "amber_tar",
+                        "stage": "stage-amber"
+                    }
+                },
+                "cobalt_tar": {
+                    "$dnanexus_link": {
+                        "stage": "stage-cobalt",
+                        "outputField": "cobalt_tar"
+                    }
+                },
+                "somatic_vcf": {
+                    "$dnanexus_link": {
+                        "stage": "stage-sage",
+                        "outputField": "somatic_vcf"
+                    }
+                },
+                "somatic_vcf_tbi": {
+                    "$dnanexus_link": {
+                        "stage": "stage-sage",
+                        "outputField": "somatic_vcf_tbi"
+                    }
+                }
+            }
+        },
+        {
+            "id": "stage-cnvkit_batch",
+            "executable": "app-eggd_cgp-cnvkit-batch/2.0.2",
+            "folder": "cnvkit_batch",
+            "input": {
+                "purity": {
+                    "$dnanexus_link": {
+                        "stage": "stage-purple",
+                        "outputField": "purity"
+                    }
+                },
+                "ploidy": {
+                    "$dnanexus_link": {
+                        "stage": "stage-purple",
+                        "outputField": "ploidy"
+                    }
+                },
+                "sample_sex": {
+                    "$dnanexus_link": {
+                        "stage": "stage-purple",
+                        "outputField": "sample_sex"
+                    }
+                }
+            }
+        },
+        {
+            "id": "stage-cnv_chr_strip",
+            "executable": "app-eggd_cnv_chr_strip/1.0.0",
+            "folder": "cnv_chr_strip",
+            "input": {
+                "cnvkit_cnr": {
+                    "$dnanexus_link": {
+                        "stage": "stage-cnvkit_batch",
+                        "outputField": "copy_ratios"
+                    }
+                },
+                "cnvkit_cns": {
+                    "$dnanexus_link": {
+                        "stage": "stage-cnvkit_batch",
+                        "outputField": "segments"
+                    }
+                },
+                "cnvkit_call_cns": {
+                    "$dnanexus_link": {
+                        "stage": "stage-cnvkit_batch",
+                        "outputField": "call_segments"
+                    }
+                },
+                "cnvkit_genemetrics": {
+                    "$dnanexus_link": {
+                        "stage": "stage-cnvkit_batch",
+                        "outputField": "genemetrics"
+                    }
+                },
+                "purple_cnv_somatic": {
+                    "$dnanexus_link": {
+                        "stage": "stage-purple",
+                        "outputField": "cnv_somatic_tsv"
+                    }
+                },
+                "purple_cnv_gene": {
+                    "$dnanexus_link": {
+                        "stage": "stage-purple",
+                        "outputField": "cnv_gene_tsv"
+                    }
+                }
+            }
+        },
+        {
+            "id": "stage-purple_plotter",
+            "executable": "app-eggd_purple_plotter/1.0.0",
+            "folder": "purple_plotter",
+            "input": {
+                "purple_tar": {
+                    "$dnanexus_link": {
+                        "stage": "stage-purple",
+                        "outputField": "purple_tar"
+                    }
+                },
+                "cnvkit_cnr": {
+                    "$dnanexus_link": {
+                        "stage": "stage-cnvkit_batch",
+                        "outputField": "copy_ratios"
+                    }
+                },
+                "cnvkit_call_cns": {
+                    "$dnanexus_link": {
+                        "stage": "stage-cnvkit_batch",
+                        "outputField": "call_segments"
+                    }
+                },
+                "cnvkit_genemetrics": {
+                    "$dnanexus_link": {
+                        "stage": "stage-cnvkit_batch",
+                        "outputField": "genemetrics"
+                    }
+                }
+            }
+        }
+    ]
+}
