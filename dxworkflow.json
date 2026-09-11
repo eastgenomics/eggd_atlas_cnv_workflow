@@ -9,22 +9,22 @@
     "stages": [
         {
             "id": "stage-amber",
-            "executable": "app-eggd_cgp-amber/1.0.0",
+            "executable": "app-eggd_cgp-amber/1.0.1",
             "folder": "amber"
         },
         {
             "id": "stage-cobalt",
-            "executable": "app-eggd_cgp-cobalt/1.0.0",
+            "executable": "app-eggd_cgp-cobalt/1.0.2",
             "folder": "cobalt"
         },
         {
             "id": "stage-sage",
-            "executable": "app-eggd_cgp-sage/1.0.1",
+            "executable": "app-eggd_cgp-sage/1.0.2",
             "folder": "sage"
         },
         {
             "id": "stage-purple",
-            "executable": "app-eggd_cgp-purple/1.0.0",
+            "executable": "app-eggd_cgp-purple/1.0.1",
             "folder": "purple",
             "input": {
                 "amber_tar": {
