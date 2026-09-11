@@ -1,6 +1,6 @@
 {
-    "name": "eggd_atlas_cnv_workflow_1.0.0",
-    "title": "eggd_atlas_cnv_workflow_1.0.0",
+    "name": "eggd_atlas_cnv_workflow_1.1.0",
+    "title": "eggd_atlas_cnv_workflow_1.1.0",
     "summary": "Somatic CNV workflow for Atlas pipeline",
     "whatsNew": {
         "1.0.0": "Initial release"
