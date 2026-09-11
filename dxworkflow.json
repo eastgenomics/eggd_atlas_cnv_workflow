@@ -3,7 +3,8 @@
     "title": "eggd_atlas_cnv_workflow_1.1.0",
     "summary": "Somatic CNV workflow for Atlas pipeline",
     "whatsNew": {
-        "1.0.0": "Initial release"
+        "1.0.0": "Initial release",
+        "1.1.0": "Update app versions for eggd_cgp-cobalt, eggd_cgp-amber, eggd_cgp-sage and eggd_cgp-purple"
     },
     "stages": [
         {
