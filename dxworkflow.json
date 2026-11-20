@@ -17,7 +17,6 @@
             "id": "stage-amber",
             "executable": "app-eggd_cgp-amber/1.0.1",
             "folder": "amber"
-    
         },
         {
             "id": "stage-cobalt",
@@ -130,7 +129,7 @@
         },
         {
             "id": "stage-purple_plotter",
-            "executable": "app-eggd_purple_plotter/1.1.0",
+            "executable": "app-eggd_purple_plotter/1.1.1",
             "folder": "purple_plotter",
             "input": {
                 "purple_tar": {
