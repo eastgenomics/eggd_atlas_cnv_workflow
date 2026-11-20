@@ -1,12 +1,18 @@
 {
-    "name": "eggd_atlas_cnv_workflow_1.1.0",
-    "title": "eggd_atlas_cnv_workflow_1.1.0",
+    "name": "eggd_atlas_cnv_workflow_1.2.0",
+    "title": "eggd_atlas_cnv_workflow_1.2.0",
     "summary": "Somatic CNV workflow for Atlas pipeline",
     "whatsNew": {
         "1.0.0": "Initial release",
-        "1.1.0": "Update app versions for eggd_cgp-cobalt, eggd_cgp-amber, eggd_cgp-sage and eggd_cgp-purple"
+        "1.1.0": "Update app versions for eggd_cgp-cobalt, eggd_cgp-amber, eggd_cgp-sage and eggd_cgp-purple",
+        "1.2.0": "Update app versions for eggd_purple_plotter and add new app eggd_fgbio"
     },
     "stages": [
+        {
+            "id": "stage-fgbio",
+            "executable": "app-eggd_fgbio/1.0.0",
+            "folder": "fgbio"
+        },
         {
             "id": "stage-amber",
             "executable": "app-eggd_cgp-amber/1.0.1",
@@ -123,7 +129,7 @@
         },
         {
             "id": "stage-purple_plotter",
-            "executable": "app-eggd_purple_plotter/1.0.0",
+            "executable": "app-eggd_purple_plotter/1.1.1",
             "folder": "purple_plotter",
             "input": {
                 "purple_tar": {
