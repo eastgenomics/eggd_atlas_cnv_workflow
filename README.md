@@ -30,5 +30,5 @@ flowchart LR
 |eggd_cgp-purple       |1.0.1|
 |eggd_cgp-cnvkit-batch |2.0.2|
 |eggd_cnv_chr_strip    |1.0.0|
-|eggd_purple_plotter   |1.0.0|
+|eggd_purple_plotter   |1.1.0|
  
