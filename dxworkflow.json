@@ -61,28 +61,8 @@
         },
         {
             "id": "stage-cnvkit_batch",
-            "executable": "app-eggd_cgp-cnvkit-batch/2.0.2",
-            "folder": "cnvkit_batch",
-            "input": {
-                "purity": {
-                    "$dnanexus_link": {
-                        "stage": "stage-purple",
-                        "outputField": "purity"
-                    }
-                },
-                "ploidy": {
-                    "$dnanexus_link": {
-                        "stage": "stage-purple",
-                        "outputField": "ploidy"
-                    }
-                },
-                "sample_sex": {
-                    "$dnanexus_link": {
-                        "stage": "stage-purple",
-                        "outputField": "sample_sex"
-                    }
-                }
-            }
+            "executable": "app-eggd_cgp-cnvkit-batch/2.1.0",
+            "folder": "cnvkit_batch"
         },
         {
             "id": "stage-cnv_chr_strip",
